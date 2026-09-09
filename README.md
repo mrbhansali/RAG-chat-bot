@@ -1,55 +1,55 @@
-# Chat with your files
+Markdown
+# 🤖 RAG Chatbot
 
-Upload PDFs / Word docs / text files, then ask questions about them.
-No system dependencies (no poppler, tesseract, or libmagic) - everything
-is pure Python, so `pip install` is the only setup step.
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=Streamlit&logoColor=white)
 
-## Structure
+Welcome! I built this **RAG (Retrieval-Augmented Generation) Chatbot** to demonstrate how we can leverage Large Language Models to securely and accurately interact with custom datasets. Instead of relying solely on an LLM's pre-trained memory, this application retrieves relevant information from a provided knowledge base to generate context-aware, hallucination-free answers.
 
-```
-.
-├── app.py                 # Streamlit UI - upload + chat
-├── config.py                # Model names, chunk size, API key handling
-├── requirements.txt
-├── .env.example
-└── src/
-    ├── ingestion.py          # PDF/DOCX/TXT -> plain text
-    ├── transformation.py     # plain text -> overlapping chunks
-    ├── vector_store.py        # embed chunks, similarity search (in-memory Chroma)
-    └── qa.py                   # retrieve + generate answer
-```
+## 🔗 Live Demo
+Check out the deployed application here: **[myrag-chat-bot.streamlit.app](https://myrag-chat-bot.streamlit.app/)**
 
-## Run it (3 steps)
+## ✨ Key Features
+* **Custom Knowledge Retrieval:** Users can query specific information, and the bot responds using only the provided context.
+* **Interactive UI:** I built a clean, conversational, and responsive front-end using Streamlit.
+* **Context-Aware Responses:** Leverages the RAG pipeline to ensure accuracy and cite specific data sources.
+* **Fast Vector Search:** Optimized document chunking and embeddings for rapid information retrieval.
 
+## 🛠️ Tech Stack
+Here are the core technologies I used to build this project:
+* **Frontend:** Streamlit
+* **LLM Framework:** LangChain / LlamaIndex *(update as needed)*
+* **Embeddings & LLM:** OpenAI / HuggingFace *(update as needed)*
+* **Vector Database:** ChromaDB / FAISS / Pinecone *(update as needed)*
+
+## 🚀 Running it Locally
+
+If you want to clone this repository and test the app on your local machine, follow these steps:
+
+### 1. Clone the repository
 ```bash
+git clone [https://github.com/mrbhansali/RAG-chat-bot.git](https://github.com/mrbhansali/RAG-chat-bot.git)
+cd RAG-chat-bot
+2. Install dependencies
+Make sure you have Python installed, then run:
+
+Bash
 pip install -r requirements.txt
-```
+3. Set up Environment Variables
+Create a .env file in the root directory and add your necessary API keys (e.g., for OpenAI):
 
-```bash
-cp .env.example .env
-# then open .env and paste in your key
-```
-
-Get a free key at [aistudio.google.com/apikey](https://aistudio.google.com/apikey) (Google AI Studio's Gemini API has a free tier with rate limits).
-
-```bash
+Code snippet
+OPENAI_API_KEY=your_api_key_here
+4. Run the application
+Bash
 streamlit run app.py
-```
+🤝 Contributing
+Feel free to fork this project, submit pull requests, or open issues if you find any bugs or have feature suggestions.
 
-That's it — open the URL Streamlit prints (usually `http://localhost:8501`), upload a file, click **Process files**, and start chatting.
+👨‍💻 Author
+Created by Mr. Bhansali. Feel free to reach out or explore my other repositories!
 
-## Known limitations (trade-offs for simplicity)
 
-- **No OCR.** A scanned PDF (an image with no text layer) will extract empty text. If you need this, we'd add `pytesseract` back in, which brings back the Tesseract system dependency.
-- **Tables/images aren't specially parsed.** They just flow into the surrounding text as plain characters.
-- **No persistence.** Each Streamlit session starts with an empty index — closing the tab loses it. Fine for demos; for production, `src/vector_store.py` is the one file to change (add a `persist_directory`, or swap Chroma for a hosted vector DB).
+***
 
-## Deploying
-
-1. Push this folder to a GitHub repo.
-2. Go to [share.streamlit.io](https://share.streamlit.io), connect the repo, point it at `app.py`.
-3. In the app's **Secrets** panel, add:
-   ```
-   GOOGLE_API_KEY = "your-key-here"
-   ```
-4. Deploy. No `packages.txt` needed this time — there are no system dependencies.
+<FollowUp label="Want to fill in your specific tech stack?" query="I want to update the
