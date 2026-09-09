@@ -1,7 +1,7 @@
 
 # RAG Chatbot
 
-Welcome! I built this **RAG (Retrieval-Augmented Generation) Chatbot** to demonstrate how we can leverage Large Language Models to securely and accurately interact with custom datasets. Instead of relying solely on an LLM's pre-trained memory, this application retrieves relevant information from a provided knowledge base to generate context-aware, hallucination-free answers.
+Welcome! I built this **RAG (Retrieval-Augmented Generation) Chatbot** to demonstrate how we can leverage Large Language Models to securely and accurately interact with custom datasets. Instead of relying solely on an LLM's pre-trained memory, this application retrieves relevant information from a provided knowledge base to generate context-aware, reduced-hallucination answers.
 
 ## Live Demo
 Check out the deployed application here: **[myrag-chat-bot.streamlit.app](https://myrag-chat-bot.streamlit.app/)**
@@ -15,9 +15,9 @@ Check out the deployed application here: **[myrag-chat-bot.streamlit.app](https:
 ## Tech Stack
 Here are the core technologies I used to build this project:
 * **Frontend:** Streamlit
-* **LLM Framework:** LangChain / LlamaIndex *(update as needed)*
-* **Embeddings & LLM:** OpenAI / HuggingFace *(update as needed)*
-* **Vector Database:** ChromaDB / FAISS / Pinecone *(update as needed)*
+* **LLM Framework:** LangChain / LlamaIndex 
+* **Embeddings & LLM:** OpenAI / HuggingFace 
+* **Vector Database:** ChromaDB / FAISS / Pinecone 
 
 ## Running it Locally
 
