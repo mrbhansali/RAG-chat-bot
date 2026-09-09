@@ -1,4 +1,5 @@
-Markdown
+
+```markdown
 # 🤖 RAG Chatbot
 
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
@@ -30,26 +31,46 @@ If you want to clone this repository and test the app on your local machine, fol
 ```bash
 git clone [https://github.com/mrbhansali/RAG-chat-bot.git](https://github.com/mrbhansali/RAG-chat-bot.git)
 cd RAG-chat-bot
-2. Install dependencies
+
+```
+
+### 2. Install dependencies
+
 Make sure you have Python installed, then run:
 
-Bash
+```bash
 pip install -r requirements.txt
-3. Set up Environment Variables
-Create a .env file in the root directory and add your necessary API keys (e.g., for OpenAI):
 
-Code snippet
+```
+
+### 3. Set up Environment Variables
+
+Create a `.env` file in the root directory and add your necessary API keys (e.g., for OpenAI):
+
+```env
 OPENAI_API_KEY=your_api_key_here
-4. Run the application
-Bash
+
+```
+
+### 4. Run the application
+
+```bash
 streamlit run app.py
-🤝 Contributing
+
+```
+
+## 🤝 Contributing
+
 Feel free to fork this project, submit pull requests, or open issues if you find any bugs or have feature suggestions.
 
-👨‍💻 Author
-Created by Mr. Bhansali. Feel free to reach out or explore my other repositories!
+## 👨‍💻 Author
 
+Created by [Mr. Bhansali](https://www.google.com/search?q=https://github.com/mrbhansali). Feel free to reach out or explore my other repositories!
+
+```
 
 ***
 
-<FollowUp label="Want to fill in your specific tech stack?" query="I want to update the
+<FollowUp label="Want to fill in your specific tech stack?" query="I want to update the tech stack section. I used LangChain, OpenAI, and ChromaDB."/>
+
+```
